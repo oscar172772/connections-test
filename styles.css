@@ -5,18 +5,28 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    position: relative; /* 添加相对定位 */
 }
 
-.counter {
-    text-align: center;
+.button-grid-wrapper {
+    display: flex;
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-#count {
-    font-size: 3rem;
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
 }
 
-button {
-    padding: 10px 20px;
+.button {
+    padding: 30px 60px;
     font-size: 1rem;
     background-color: #007bff;
     color: #fff;
@@ -25,6 +35,13 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
-    background-color: #0056b3;
+.selected {
+    background-color: #28a745;
+}
+
+.counter {
+    position: absolute;
+    top: 20px; /* 上移文字 */
+    left: 50%;
+    transform: translateX(-50%);
 }
